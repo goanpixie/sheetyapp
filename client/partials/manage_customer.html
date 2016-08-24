@@ -1,0 +1,22 @@
+<html>
+<body>
+	<h3>All Customers</h3>
+	<input type="text" ng-model="search">
+	<table>
+		<thead>
+			<th>Company Name</th>
+			<th>Contact Name</th>
+			<th>Phone No.</th>
+			<th>Action</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat ="customer in customers | filter: search">
+				<td>{{customer.name}}</td>
+				<td>{{customer.contact_name}}</td>
+				<td>{{customer.phone}}</td>
+				<td><a href="#/">View</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
