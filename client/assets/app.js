@@ -2,63 +2,62 @@ var app = angular.module('app', ['ngRoute', 'ngCookies']);
 app.config(function ($routeProvider) {
 $routeProvider
 
-	.when( {
+	.when('/dashboard', {
 		templateUrl: 'partials/dashboard.html',
 		controller: 'batchController'
 	})
-	.when( {
+	.when('/', {
 		templateUrl: 'partials/stations.html',
 		controller: 'batchController'
 	})
-	.when( {
+	.when('/wash', {
 		templateUrl: 'partials/wash_station.html',
 		controller: 'batchController'
 	})
-	.when( {
+	.when('/dry', {
 		templateUrl: 'partials/dry_station.html',
 		controller: 'batchController'
 	})
-	.when( {
+	.when('/folder', {
 		templateUrl: 'partials/folder_station.html',
 		controller: 'batchController'
 	})
-	.when( {
+	.when('/finish', {
 		templateUrl: 'partials/finish_station.html',
 		controller: 'batchController'
 	})
-	.when( {
+	.when('/batch', {
 		templateUrl: 'partials/batch.html',
 		controller: 'batchController'
 	})
-	.when( {
+	.when('/edit_customer/:id', {
 		templateUrl: 'partials/edit_customer.html',
 		controller: 'customerController'
 	})
-	.when( {
+	.when('/new_customer', {
 		templateUrl: 'partials/newcustomer.html',
 		controller: 'customerController'
 	})
-	.when( {
-		templateUrl: 'partials/newitem.html',
-		controller: 'itemController'
-	})
-	.when( {
+	// .when( {
+	// 	templateUrl: 'partials/newitem.html',
+	// 	controller: 'itemController'
+	// })
+	.when('/customer_manage', {
 		templateUrl: 'partials/manage_customer.html',
 		controller: 'customerController'
 	})
-	.when( {
+	.when('/item_manage', {
 		templateUrl: 'partials/manage_items.html',
 		controller: 'itemController'
 	})
-
-	.when( {
-		templateUrl: 'partials/edit_items.html',
-		controller: 'itemController'
-	})
-	.when( {
-		templateUrl: 'partials/login.html',
-		controller: 'credentialController'
-	})
+	// .when( {
+	// 	templateUrl: 'partials/edit_items.html',
+	// 	controller: 'itemController'
+	// })
+	// .when( {
+	// 	templateUrl: 'partials/login.html',
+	// 	controller: 'credentialController'
+	// })
 		.otherwise({
 			redirectTo: '/'
 		})
