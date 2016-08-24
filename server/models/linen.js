@@ -29,9 +29,9 @@ var CustomerSchema = new mongoose.Schema({
 	comments: String
 }, {timestamps:true});
 
-mongoose.model('Batches', UserSchema);
-var Users = mongoose.model('Batches')
-mongoose.model('Items', MessageSchema); 
-var Messages = mongoose.model('Items')
-mongoose.model('Customers', CommentSchema); 
-var Comments = mongoose.model('Customers')
+mongoose.model('Batches', BatchSchema);
+var Batches = mongoose.model('Batches')
+mongoose.model('Items', ItemSchema); 
+var Items = mongoose.model('Items')
+mongoose.model('Customers', CustomerSchema); 
+var Customers = mongoose.model('Customers')
