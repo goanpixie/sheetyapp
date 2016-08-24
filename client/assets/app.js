@@ -33,10 +33,14 @@ $routeProvider
 	.when( {
 		templateUrl: 'partials/edit_customer.html',
 		controller: 'customerController'
-	})						
+	})
 	.when( {
 		templateUrl: 'partials/newcustomer.html',
 		controller: 'customerController'
+	})
+	.when( {
+		templateUrl: 'partials/newitem.html',
+		controller: 'itemController'
 	})
 	.when( {
 		templateUrl: 'partials/manage_customer.html',
