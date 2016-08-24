@@ -1,4 +1,4 @@
-itemapp.factory('itemFactory', ['$http', function($http){
+app.factory('itemFactory', ['$http', function($http){
 
 function itemFactory(){
 	this.create = function(item, callback){
@@ -16,5 +16,6 @@ function itemFactory(){
 	this.all = function(callback){
 		
 	}
-}	
+}
+return new itemFactory()	
 }])

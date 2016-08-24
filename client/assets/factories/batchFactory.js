@@ -19,5 +19,6 @@ function batchFactory(){
 	this.all = function(callback){
 		
 	}
-}	
+}
+return new batchFactory()	
 }])
