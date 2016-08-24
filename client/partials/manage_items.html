@@ -1,0 +1,25 @@
+<html>
+<body>
+	<h3>All Items</h3>
+	<input type="text" ng-model="search">
+	<table>
+		<thead>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Size</th>
+			<th>Charge</th>
+			<th>price</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat ="item in items | filter: search">
+				<td>{{item.name}}</td>
+				<td>{{item.type}}</td>
+				<td>{{item.size}}</td>
+				<td>{{item.charge}}</td>
+				<td>{{item.price}}</td>
+				<td><a href="#/">View</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
