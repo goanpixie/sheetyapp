@@ -121,5 +121,23 @@ function LinensController(){
 			}
 		});
 	}
+	this.getPerPounds = function(req, res){
+		Items.find({charge: "pound"}, function(err, items){
+			if(err){
+				res.json(err);
+			}else{
+				res.json(items);
+			}
+		});
+	}
+	this.getPerItems = function(req, res){
+		Items.find({charge: "item"}, function(err, items){
+			if(err){
+				res.json(err);
+			}else{
+				res.json(items);
+			}
+		});
+	}
 }
 module.exports = new LinensController();
