@@ -1,12 +1,45 @@
 <h1>Edit Item</h1>
-<form>
-<!-- for loop through the specific item to fill values -->
-	<input type="text" name="item.name">
-	<input type="text" name="item.type">
-	<input type="text" name="item.size">
-	<select type="charge">
-		<option>Weight: Per Pound</option>
-		<option>Per Piece</option>
-	</select>
-	<input type="text" name="item.price">
+<form ng-submit = "updateItem()" class = ".edit_Items_css">
+	<label>Name: <input type="text" ng-model="item.name"></label><br>
+  	<label>Type: <input type="text" ng-model="item.type"></label><br>
+  	<label>Size: <input type="text" ng-model="item.size"></label><br>
+  	<label>Per item<input type="radio" name="per" ng-model="item.per" value="item"></label><br>
+  	<label>Per pound<input type="radio" name="per" ng-model="item.per" value="pound"></label><br>
+  	<label>Price: <input type="text" ng-model="item.price"></label><br>
+  	<input type="submit" value="Update Item">
 </form>
+	<button ng-click = "deleteItem()">Delete</button>
+<style>
+.edit_Items_css {
+    width: 100%;
+    padding: 1em 1.25px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    height:1.67em;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 1em 1.67px;
+    margin: 0.67em 0;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 5px;
+    font-size: 1.35em;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #3366ff;
+    color: white;
+    padding: 1.0px 1.0px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height:7.97em;
+    font-size:1.0em;
+}
+</style>
+
