@@ -25,6 +25,8 @@ var CustomerSchema = new mongoose.Schema({
 	phone: Number, 
 	email: String, 
 	address: String,
+	address2: String, 
+	address3: String,
 	weight_price: Number, 
 	comments: String
 }, {timestamps:true});

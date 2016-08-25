@@ -1,26 +1,14 @@
 <h1>Edit Item</h1>
-<form class="edit_items_form">
-    <!-- for loop through the specific item to fill values -->
-    <label for="Item Name"><b>Item Name:</b></label>
-    <input type="text" name="item.name">
-    <br>
-    <label for="Type"><b>Type:</b></label>
-    <input type="text" name="item.type">
-    <br>
-    <label for="Size"><b>Size:</b></label>
-    <input type="text" name="item.size">
-    <br>
-    <label for="Charge"><b>Charge:</b></label>
-    <select type="charge" class="edit_Items_select">
-        <option>Weight: Per Pound</option>
-        <option>Per Piece</option>
-    </select>
-    <br>
-    <br>
-    <label for="Item Price"><b>Item Price:</b></label>
-    <input type="text" name="item.price">
-    <input type="submit" value="Update Item">
+<form ng-submit = "updateItem()" class = ".edit_Items_css">
+	<label>Name: <input type="text" ng-model="item.name"></label><br>
+  	<label>Type: <input type="text" ng-model="item.type"></label><br>
+  	<label>Size: <input type="text" ng-model="item.size"></label><br>
+  	<label>Per item<input type="radio" name="per" ng-model="item.per" value="item"></label><br>
+  	<label>Per pound<input type="radio" name="per" ng-model="item.per" value="pound"></label><br>
+  	<label>Price: <input type="text" ng-model="item.price"></label><br>
+  	<input type="submit" value="Update Item">
 </form>
+	<button ng-click = "deleteItem()">Delete</button>
 <style>
 .edit_Items_css {
     width: 100%;
@@ -54,3 +42,4 @@ input[type=submit] {
     font-size:1.0em;
 }
 </style>
+
