@@ -1,20 +1,41 @@
 <h1>New Batch</h1>
 <h2>Current User</h2>
-<!-- add the get function for current user that is logged in -->
 <form>
-	<select id="customer_select">
-	<!-- for loop to create options customer.name -->
-		<option></option>
-	</select>
-	<select id="per_item_selector">
-		<!-- for loop to view options for per item types -->
-		<option></option>
-	</select>
-	<select id="per_pound_selector">
-		<!-- for loop to view options for per pound selector -->
-		<option></option>
-	</select>
-	<input type="timedate" name="due date" value="Expected Due Date">
+	<label><select ng-model="newBatch._customer">
+		<option ng-repeat= "customer in customers" value ="{{customer._id}}">{{customer.name}}</option>
+	</select></label>
+	<label><select>
+		<option ng-repeat ="item in peritems">{{item.name}}</option>
+	</select></label>
+	<label><select>
+		<option ng-repeat="item in perpounds">{{item.name}}</option>
+	</select></label>
+	<label><input type="date" name="due date" value="Expected Due Date"></label>
+	
+	
+
+	<table>
+		<thead>
+			<th>Item</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Subtotal</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
 	<input type="submit" name="submit" value="View Summary">
 	<!-- we want another button to appear for confirmation -->
 </form>
+<!-- <script type="text/javascript">
+	$(document).ready(function(){
+
+	})
+
+</script> -->
