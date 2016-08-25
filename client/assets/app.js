@@ -37,10 +37,10 @@ $routeProvider
 		templateUrl: 'partials/newcustomer.html',
 		controller: 'customerController'
 	})
-	// .when( {
-	// 	templateUrl: 'partials/newitem.html',
-	// 	controller: 'itemController'
-	// })
+	.when('/new_item',  {
+		templateUrl: 'partials/newitem.html',
+		controller: 'itemController'
+	})
 	.when('/customer_manage', {
 		templateUrl: 'partials/manage_customer.html',
 		controller: 'customerController'
@@ -49,10 +49,10 @@ $routeProvider
 		templateUrl: 'partials/manage_items.html',
 		controller: 'itemController'
 	})
-	// .when( {
-	// 	templateUrl: 'partials/edit_items.html',
-	// 	controller: 'itemController'
-	// })
+	.when('/edit_item/:id', {
+		templateUrl: 'partials/edit_items.html',
+		controller: 'itemController'
+	})
 	// .when( {
 	// 	templateUrl: 'partials/login.html',
 	// 	controller: 'credentialController'
