@@ -1,12 +1,55 @@
 <h1>Edit Customer</h1>
-<form ng-submit="updateCustomer()" ng-controller='customerController'>
+<form ng-submit="updateCustomer()" ng-controller='customerController'  class = ".edit_customer">
 	<label>Business Name: <input type="text" ng-model="customer.name" ></label>
 	<label>Contact Name: <input type="text" ng-model="customer.contact_name"></label>
 	<label>Phone: <input type="text" ng-model="customer.phone"></label>
 	<label>Email: <input type="text" ng-model="customer.email" ></label>
 	<label>Billing Address: <input type="text" ng-model="customer.address"></label>
-	<label><input type="text" ng-model="customer.address2"></label>
-	<label><input type="text" ng-model="customer.address3"></label>
+	<label>Address Line 2: <input type="text" ng-model="customer.address2"></label>
+	<label>Address Line 3: <input type="text" ng-model="customer.address3"></label>
 	<input type="submit" value="Update Customer">
 </form>
-<button ng-click = "deleteCustomer()">Delete User</button>
+<button ng-click = "deleteCustomer()">Delete Customer</button>
+<style>
+* {
+    font-family: arial;
+}
+.edit_customer {
+    width: 100%;
+    padding: 1em 1.25px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    height:1.67em;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 1em 1.67px;
+    margin: 0.67em 0;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 5px;
+    font-size: 1.35em;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #3366ff;
+    color: white;
+    padding: 1.0px 1.0px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    height:7.97em;
+    font-size:1.0em;
+}
+
+button {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.0em;
+}
+</style>
