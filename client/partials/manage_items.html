@@ -8,7 +8,7 @@
 			<th>Type</th>
 			<th>Size</th>
 			<th>Charge</th>
-			<th>price</th>
+			<th>Price</th>
 		</thead>
 		<tbody>
 			<tr ng-repeat ="item in items | filter: search">
@@ -17,9 +17,10 @@
 				<td>{{item.size}}</td>
 				<td>{{item.charge}}</td>
 				<td>{{item.price}}</td>
-				<td><a href="#/">View</a></td>
+				<td><a href="#/edit_item/{{item._id}}">View</a></td>
 			</tr>
 		</tbody>
 	</table>
+	<button><a href="#/new_item">Add Item</a></button>
 </body>
 </html>
