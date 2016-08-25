@@ -1,7 +1,6 @@
 var app = angular.module('app', ['ngRoute', 'ngCookies']);
-app.config(function ($routeProvider) {
+app.config(function($routeProvider){
 $routeProvider
-
 	.when('/dashboard', {
 		templateUrl: 'partials/dashboard.html',
 		controller: 'batchController'
