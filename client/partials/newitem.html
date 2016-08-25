@@ -1,11 +1,10 @@
 <h1>Add New Item</h1>
-<form>
-  <label>Name: <input type="text" ng-model=""></label><br>
-  <label>Type: <input type="text" ng-model=""></label><br>
-  <label>Size: <input type="text" ng-model=""></label><br>
-  <label>Per pound<input type="radio" name="per" ng-model=""></label><br>
-  <label>Per pound<input type="radio" name="per" ng-model=""></label><br>
-  <label>Size: <input type="text"></label ng-model=""><br>
-  <label>Price: <input type="text"></label ng-model=""><br>
+<form ng-submit = "addItem()">
+  <label>Name: <input type="text" ng-model="newItem.name"></label><br>
+  <label>Type: <input type="text" ng-model="newItem.type"></label><br>
+  <label>Size: <input type="text" ng-model="newItem.size"></label><br>
+  <label>Per item<input type="radio" name="per" ng-model="newItem.per" value="item"></label><br>
+  <label>Per pound<input type="radio" name="per" ng-model="newItem.per" value="pound"></label><br>
+  <label>Price: <input type="text" ng-model="newItem.price"></label><br>
   <input type="submit" value="Add New Item">
 </form>
