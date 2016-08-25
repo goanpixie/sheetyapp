@@ -1,12 +1,56 @@
 <h1>Edit Item</h1>
-<form>
-<!-- for loop through the specific item to fill values -->
-	<input type="text" name="item.name">
-	<input type="text" name="item.type">
-	<input type="text" name="item.size">
-	<select type="charge">
-		<option>Weight: Per Pound</option>
-		<option>Per Piece</option>
-	</select>
-	<input type="text" name="item.price">
+<form class="edit_items_form">
+    <!-- for loop through the specific item to fill values -->
+    <label for="Item Name"><b>Item Name:</b></label>
+    <input type="text" name="item.name">
+    <br>
+    <label for="Type"><b>Type:</b></label>
+    <input type="text" name="item.type">
+    <br>
+    <label for="Size"><b>Size:</b></label>
+    <input type="text" name="item.size">
+    <br>
+    <label for="Charge"><b>Charge:</b></label>
+    <select type="charge" class="edit_Items_select">
+        <option>Weight: Per Pound</option>
+        <option>Per Piece</option>
+    </select>
+    <br>
+    <br>
+    <label for="Item Price"><b>Item Price:</b></label>
+    <input type="text" name="item.price">
+    <input type="submit" value="Update Item">
 </form>
+<style>
+.edit_Items_css {
+    width: 100%;
+    padding: 1em 1.25px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    height:1.67em;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 1em 1.67px;
+    margin: 0.67em 0;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 5px;
+    font-size: 1.35em;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #3366ff;
+    color: white;
+    padding: 1.0px 1.0px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height:7.97em;
+    font-size:1.0em;
+}
+</style>
