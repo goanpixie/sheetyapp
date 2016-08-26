@@ -13,11 +13,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="batch in processing">
-					<td>1</td>
-					<td>{{batch._customer.name}}</td>
-					<td>{{batch.status}}</td>
-					<td>{{batch.due_date}}</td>
+				<tr ng-repeat="batch in batches">
+					<td ng-if="batch.status != 'Completed'">1</td>
+					<td ng-if="batch.status != 'Completed'">{{batch._customer.name}}</td>
+					<td ng-if="batch.status != 'Completed'">{{batch.status}}</td>
+					<td ng-if="batch.status != 'Completed'">{{batch.due_date}}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -33,10 +33,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="batch in completed">
-					<td>1</td>
-					<td>{{batch._customer.name}}</td>
-					<td>{{batch.due_date}}</td>
+				<tr ng-repeat="batch in batches" >
+					<td ng-if="batch.status == 'Completed'">1</td>
+					<td ng-if="batch.status == 'Completed'">{{batch._customer.name}}</td>
+					<td ng-if="batch.status == 'Completed'">{{batch.due_date}}</td>
 				</tr>
 			</tbody>
 		</table>

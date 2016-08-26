@@ -24,12 +24,17 @@ app.factory('batchFactory', ['$http', function($http){
 			});
 		}
 		this.getPounds = function(callback){
-			$http.get('/get_perpounds').then(function(results){
+			$http.get('/get_batchpounds').then(function(results){
 				callback(results.data);
 			});
 		}
 		this.getItems = function(callback){
-			$http.get('/get_peritems').then(function(results){
+			$http.get('/get_batchitems').then(function(results){
+				callback(results.data);
+			});
+		}
+		this.allItems = function(callback){
+			$http.get('/get_items').then(function(results){
 				callback(results.data);
 			});
 		}

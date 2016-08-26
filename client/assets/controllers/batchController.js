@@ -2,27 +2,35 @@ app.controller('batchController', ['$scope', 'batchFactory', '$location', '$cook
 	$scope.customers;
 	$scope.perpounds;
 	$scope.peritems;
+	// $scope.items;
+	// $scope.batches;
 	$scope.completed = [];
 	$scope.processing = [];
 	$scope.queue = [];
 
 	$scope.getBatches = function(){
 		batchFactory.allBatches(function(results){
-			var arr = results;
-			for(var i=0; i<arr.length;i++){
-				if(arr[i].status == "Complete"){
-					$scope.completed.push(arr[i]);
-				}else{
-					$scope.processing.push(arr[i]);
-				}
-			}
+			$scope.batches = results
+			// var arr = results;
+			// for(var i=0; i<arr.length;i++){
+			// 	if(arr[i].status == "Complete"){
+			// 		$scope.completed.push(arr[i]);
+			// 	}else{
+			// 		$scope.processing.push(arr[i]);
+			// 	}
+			// }
 		});
 	}
 	$scope.getCustomers = function(){
 		batchFactory.allCustomers(function(results){
-			$scope.customers=results;
+			$scope.customers = results;
 		});
 	}
+	// $scope.getItems = function(){
+	// 	batchFactory.allItems(function(results){
+	// 		$scope.items = results
+	// 	})
+	// }
 	$scope.getPerPounds = function(){
 		batchFactory.getPounds(function(results){
 			$scope.perpounds = results;
@@ -35,6 +43,7 @@ app.controller('batchController', ['$scope', 'batchFactory', '$location', '$cook
 	}
 	$scope.getBatches();
 	$scope.getCustomers();
+	// $scope.getItems();
 	$scope.getPerPounds();
 	$scope.getPerItems();
 
