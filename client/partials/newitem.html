@@ -3,8 +3,46 @@
   <label>Name: <input type="text" ng-model="newItem.name"></label><br>
   <label>Type: <input type="text" ng-model="newItem.type"></label><br>
   <label>Size: <input type="text" ng-model="newItem.size"></label><br>
-  <label>Per item<input type="radio" name="per" ng-model="newItem.per" value="item"></label><br>
-  <label>Per pound<input type="radio" name="per" ng-model="newItem.per" value="pound"></label><br>
+  <label class="radio">Per item<input type="radio" name="per" ng-model="newItem.per" value="item"></label>
+  <label class="radio">Per pound<input type="radio" name="per" ng-model="newItem.per" value="pound"></label><br>
   <label>Price: <input type="text" ng-model="newItem.price"></label><br>
   <input type="submit" value="Add New Item">
 </form>
+<style media="screen">
+	* {
+	  font-family: arial;
+	}
+	input[type=text] {
+	  width: 100%;
+	  padding: 1em 1.67px;
+	  margin: 0.4em 0;
+	  box-sizing: border-box;
+	  display: block;
+	  border-radius: 5px;
+	  font-size: 1.35em;
+	}
+	.radio {
+		display: inline-block;
+		margin: 0.6em 0 2.6em 0;
+		width: 15%;
+	}
+	input[type=submit] {
+	  width: 100%;
+	  background-color: #3366ff;
+	  color: white;
+	  padding: 1.0px 1.0px;
+	  margin: 8px 0;
+	  border: none;
+	  border-radius: 0.3em;
+	  cursor: pointer;
+	  height:7.97em;
+	  font-size:1.0em;
+	}
+
+	button {
+	  background-color: red;
+	  color: white;
+	  border-radius: 5px;
+	  font-size: 1.0em;
+	}
+</style>
