@@ -1,41 +1,53 @@
 <h1>New Batch</h1>
 <h2>Current User</h2>
-<form>
-	<label><select ng-model="newBatch._customer">
-		<option ng-repeat= "customer in customers" value ="{{customer._id}}">{{customer.name}}</option>
-	</select></label>
-	<label><select>
-		<option ng-repeat ="item in peritems">{{item.name}}</option>
-	</select></label>
-	<label><select>
-		<option ng-repeat="item in perpounds">{{item.name}}</option>
-	</select></label>
-	<label><input type="date" name="due date" value="Expected Due Date"></label>
+	<label>Per Item
+		<select ng-model="queuedPerItem.index">
+			<option ng-repeat ="item in peritems track by $index" value= {{$index}}>{{item.name}}</option>
+		</select>
+	</label>
+	<label>Qty
+		<input type="text" ng-model="queuedPerItem.quantity">
+	</label>
+	<button ng-click="selectPerItem()">Add</button><br>
+	<label>Per Pound
+		<select ng-model= "queuedPerPound.index">
+			<option ng-repeat="item in perpounds track by $index" value= {{$index}}>{{item.name}}</option>
+		</select>
+	</label>
+	<label>Qty
+		<input type="text" ng-model="queuedPerPound.quantity">
+	</label>
+	<button ng-click="selectPerPound()">Add</button><br>
 	
-	
-
+	<hr>
 	<table>
 		<thead>
 			<th>Item</th>
 			<th>Price</th>
+			<th>Charge</th>
 			<th>Quantity</th>
 			<th>Subtotal</th>
 		</thead>
 		<tbody>
-			<tr>
-				<td>
-					
-				</td>
+			<tr ng-repeat = "part in queue">
+				<td>{{part.name}}</td>
+				<td>{{part.price}}</td>
+				<td>Per {{part.charge}}</td>
+				<td>{{part.quantity}}</td>
+				<td>{{part.subtotal}}</td>
 			</tr>
 		</tbody>
 	</table>
-
+	<textarea ng-model="newBatch.instructions"></textarea>
+	<form ng-submit = "addBatch()">
+	<label>Customer
+		<select ng-model="newBatch._customer">
+			<option ng-repeat= "customer in customers" value ="{{customer._id}}">{{customer.name}}</option>
+		</select><br>
+	</label>
+	<label>Due Date
+		<input type="date" name="due_date" ng-model ="newBatch.due_date">
+	</label>
 	<input type="submit" name="submit" value="View Summary">
 	<!-- we want another button to appear for confirmation -->
 </form>
-<!-- <script type="text/javascript">
-	$(document).ready(function(){
-
-	})
-
-</script> -->
