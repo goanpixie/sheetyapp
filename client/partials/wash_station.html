@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Wash</title>
-</head>
-
-<body>
-    <h1>WASH</h1>
+<h1>WASH</h1>
     <table>
         <tr>
             <th>Batch Number</th>
@@ -22,35 +14,33 @@
             <td></td>
         </tr>
     </table>
-    <button class="Wash_button">SEND TO DRYER</button>
+<button class="wash_button">SEND TO DRYER</button>
     <!-- ng-click in the div-->
-    <style>
-      th{
+<style>
+    * {
+        font-family: Arial;
+    }
+    th{
         font-size:1.5em;
     }
-
-    h1{
-        text-align:center;
-    }
-
-
+    h1 {
+		font-size: 3.5em;
+		margin-bottom: 0.5em;
+		margin-top: 0;
+	}
     table {
         border-collapse: collapse;
         width: 100%;
     }
-    
-    th,
-    td {
+    th, td {
         padding: 1.3em;
         text-align: left;
         border-bottom: 1px solid #ddd;
     }
-    
     tr:hover {
         background-color: #19FFC5;
     }
-
-    .Wash_button{
+    .wash_button {
     width: 100%;
     background-color: #3366ff;
     color: white;
@@ -67,10 +57,5 @@
     background: -o-linear-gradient(right, #FF197E, #FFF819); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right, #FF197E, #FFF819); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right, #FF197E ,#FFF819); /* Standard syntax (must be last) */
-}
-
-    </style>
-    </style>
-</body>
-
-</html>
+    }
+</style>

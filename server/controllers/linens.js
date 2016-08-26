@@ -121,5 +121,41 @@ function LinensController(){
 			}
 		});
 	}
+	this.getPerPounds = function(req, res){
+		Items.find({charge: "pound"}, function(err, items){
+			if(err){
+				res.json(err);
+			}else{
+				res.json(items);
+			}
+		});
+	}
+	this.getPerItems = function(req, res){
+		Items.find({charge: "item"}, function(err, items){
+			if(err){
+				res.json(err);
+			}else{
+				res.json(items);
+			}
+		});
+	}
+	this.addBatch = function(req, res){
+		console.log(req.body, "controllerrrrr")
+		var batch = new Batches(
+		{
+			status: req.body.status, 
+			instructions: req.body.instructions, 
+			due_date: req.body.due_date, 
+			_customer: req.body._customer,
+			order: req.body.order
+		});
+		batch.save(function(err){
+			if(err){
+				res.json(err);
+			}else{
+				res.send()
+			}
+		});
+	}
 }
 module.exports = new LinensController();

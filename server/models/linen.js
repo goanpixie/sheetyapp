@@ -1,13 +1,19 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
-var BatchSchema = new mongoose.Schema({
-	weight: Number, 
+var BatchSchema = new mongoose.Schema({ 
 	status: String, 
 	instructions: String, 
-	recieved_by: String, 
-	_items: [{type: Schema.Types.ObjectId, ref: "Item"}],
-	_customer: {type: Schema.Types.ObjectId, ref: "Customers"}
+	recieved_by: String,
+	due_date: String, 
+	_customer: {type: Schema.Types.ObjectId, ref: "Customers"},
+	order: [{
+		name: String,
+		price: Number, 
+		charge: String, 
+		quantity: Number,
+		subtotal: Number	
+	}]
 }, {timestamps: true});
 
 var ItemSchema = new mongoose.Schema({
