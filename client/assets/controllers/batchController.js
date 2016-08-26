@@ -23,21 +23,37 @@ app.controller('batchController', ['$scope', 'batchFactory', '$location', '$cook
 	$scope.getPerPounds();
 	$scope.getPerItems();
 
-	$scope.selectItem = function(price, charge){
+	$scope.selectPerItem = function(){
 		var arr = $scope.peritems;
 		for (var i=0; i<arr.length; i++){
-			if ($scope.queuedItem.index == i){
-				$scope.queuedItem.name = arr[i].name;
-				$scope.queuedItem.charge = arr[i].charge;
-				$scope.queuedItem.price = arr[i].price;
+			if ($scope.queuedPerItem.index == i){
+				$scope.queuedPerItem.name = arr[i].name;
+				$scope.queuedPerItem.charge = arr[i].charge;
+				$scope.queuedPerItem.price = arr[i].price;
 			}
 		}
-		$scope.queuedItem.subtotal = parseInt($scope.queuedItem.price)*parseInt($scope.queuedItem.quantity);
-		$scope.queue.push($scope.queuedItem);
-		console.log($scope.queue);
-		$scope.queuedItem = {};
+		$scope.queuedPerItem.subtotal = parseInt($scope.queuedPerItem.price)*parseInt($scope.queuedPerItem.quantity);
+		$scope.queue.push($scope.queuedPerItem);
+		$scope.queuedPerItem = {};
 	}
-	$scope.addBatch
-
-
+	$scope.selectPerPound = function(){
+		var arr = $scope.perpounds;
+		for (var i=0; i<arr.length; i++){
+			if ($scope.queuedPerPound.index == i){
+				$scope.queuedPerPound.name = arr[i].name;
+				$scope.queuedPerPound.charge = arr[i].charge;
+				$scope.queuedPerPound.price = arr[i].price;
+			}
+		}
+		$scope.queuedPerPound.subtotal = parseInt($scope.queuedPerPound.price)*parseInt($scope.queuedPerPound.quantity);
+		$scope.queue.push($scope.queuedPerPound);
+		$scope.queuedPerPound = {};
+	}
+	$scope.addBatch = function(){
+		$scope.newBatch.order = $scope.queue;
+		$scope.newBatch.status = "Received";
+		batchFactory.create($scope.newBatch, function(results){
+			$location.url('/dashboard');
+		});
+	}
 }]);

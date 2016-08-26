@@ -2,7 +2,10 @@ app.factory('batchFactory', ['$http', function($http){
 
 	function batchFactory(){
 		this.create = function(batch, callback){
-
+			console.log(batch, "factoryyyyyyyy")
+			$http.post('/add_batch', batch).then(function(results){
+				callback(results.data);
+			});
 		}
 		this.status = function(batch, callback){
 			
