@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <h2>DRY</h2>
+    <h1>DRY</h1>
     <table>
         <tr>
             <th>Batch Number</th>
@@ -22,7 +22,60 @@
             <td></td>
         </tr>
     </table>
-    <div>SEND TO FINISH</div> <!-- ng-click in the div-->
+    <button class="Dry_button">SEND TO FOLDER</button>
+    <!-- ng-click in the div-->
+    <style>
+      th{
+        font-size:1.5em;
+    }
+
+    h1{
+        text-align:center;
+    }
+
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th,
+    td {
+        padding: 14px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    tr:hover {
+        background-color: #19FFC5;
+    }
+
+    .Dry_button {
+        width: 100%;
+        background-color: #3366ff;
+        color: white;
+        padding: 1.0px 1.0px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 0.5em;
+        cursor: pointer;
+        height: 5.97em;
+        font-size: 1.5em;
+        height: 200px;
+        background: red;
+        /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(left, #FF4D19, #FF197E 40%, #FFF819);
+        /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(right, #FF4D19, #FF197E 40%, #FFF819);
+        /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(right, #FF4D19, #FF197E 40%, #FFF819);
+        /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to right, #FF4D19, #FF197E 40%, #FFF819);
+        /* Standard syntax (must be last) */
+    }
+
+    linear-gradient(#04519b, #044687 60%, #033769)
+    </style>
 </body>
 
 </html>

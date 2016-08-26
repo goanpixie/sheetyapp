@@ -1,7 +1,6 @@
-<html>
-<body>
-	<h3>All Items</h3>
-	<input type="text" ng-model="search">
+<h1>All Items</h1>
+<input type="text" ng-model="search">
+<button id="add_item"><a href="#/new_item">Add Item</a></button>
 	<table>
 		<thead>
 			<th>Name</th>
@@ -9,6 +8,7 @@
 			<th>Size</th>
 			<th>Charge</th>
 			<th>Price</th>
+			<th>Action</th>
 		</thead>
 		<tbody>
 			<tr ng-repeat ="item in items | filter: search">
@@ -21,6 +21,67 @@
 			</tr>
 		</tbody>
 	</table>
-	<button><a href="#/new_item">Add Item</a></button>
-</body>
-</html>
+<style>
+* {
+	font-family: Arial;
+}
+h1 {
+	font-size: 3.5em;
+	margin-bottom: 0;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+	border: solid gray 0.1em;
+}
+thead th {
+	height: 2em;
+	font-size: 1.8em;
+}
+#thead_left {
+}
+th {
+	background: linear-gradient(#4c8ac3, #2c5c87);
+	color: white;
+	/*letter-spacing: .5em;*/
+}
+td, th {
+	border: 0.1em solid #dddddd;
+	text-align: left;
+	font-size: 2.0em;
+	padding: 8px;
+}
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+input[type=text] {
+    width: 49%;
+    padding: 1em 1.67px;
+    margin:0;
+    box-sizing: border-box;
+    border-radius: 0.4em;
+    font-size: 1.35em;
+	display: inline-block;
+	vertical-align: top;
+}
+#add_item {
+	background: linear-gradient(#f8a227, #f57c22);
+	margin-bottom: 1rem;
+	margin-top: 0;
+	width: 50.4%;
+	height:6.5em;
+	/*box-shadow: 10px 10px 5px #888888;*/
+	border-radius: 1em;
+	vertical-align: top;
+}
+#add_item a {
+	text-decoration: none;
+	display: block;
+	color: white;
+	font-size: 4em;
+}
+a {
+	text-decoration: none;
+}
+
+</style>

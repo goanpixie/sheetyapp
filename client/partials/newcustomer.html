@@ -9,6 +9,40 @@
   <label><input type="text" ng-model="newCustomer.address2"></label><br>
   <label><input type="text" ng-model="newCustomer.address3"></label><br>
   <label>Weight-price: <input type="text" ng-model="newCustomer.weight"></label>
-  <label>Comments: <textarea ng-model="comments"></textarea></label>
+  <label>Comments: <input type="text" ng-model="newCustomer.comments"></label>
   <input type="submit" value="Create Customer">
 </form>
+<style media="screen">
+	* {
+	  font-family: arial;
+	}
+	input[type=text] {
+	  width: 100%;
+	  padding: 1em 1.67px;
+	  margin: 0.4em 0;
+	  box-sizing: border-box;
+	  display: block;
+	  border-radius: 5px;
+	  font-size: 1.35em;
+	}
+
+	input[type=submit] {
+	  width: 100%;
+	  background-color: #3366ff;
+	  color: white;
+	  padding: 1.0px 1.0px;
+	  margin: 8px 0;
+	  border: none;
+	  border-radius: 0.3em;
+	  cursor: pointer;
+	  height:7.97em;
+	  font-size:1.0em;
+	}
+
+	button {
+	  background-color: red;
+	  color: white;
+	  border-radius: 5px;
+	  font-size: 1.0em;
+	}
+</style>
