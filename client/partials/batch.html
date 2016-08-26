@@ -1,32 +1,24 @@
 <h1>New Batch</h1>
 <h2>Current User</h2>
-<form ng-submit = "addBatch()">
-	<label>Customer
-		<select ng-model="newBatch._customer">
-			<option ng-repeat= "customer in customers" value ="{{customer._id}}">{{customer.name}}</option>
-		</select><br>
-	</label>
 	<label>Per Item
-		<select ng-model="queuedItem.index">
+		<select ng-model="queuedPerItem.index">
 			<option ng-repeat ="item in peritems track by $index" value= {{$index}}>{{item.name}}</option>
 		</select>
 	</label>
 	<label>Qty
-		<input type="text" ng-model="queuedItem.quantity">
+		<input type="text" ng-model="queuedPerItem.quantity">
 	</label>
-	<button ng-click="selectItem()">Add</button><br>
+	<button ng-click="selectPerItem()">Add</button><br>
 	<label>Per Pound
-		<select ng-model= "queuedItem.index">
+		<select ng-model= "queuedPerPound.index">
 			<option ng-repeat="item in perpounds track by $index" value= {{$index}}>{{item.name}}</option>
 		</select>
 	</label>
 	<label>Qty
-		<input type="text" ng-model="queuedItem.quantity">
+		<input type="text" ng-model="queuedPerPound.quantity">
 	</label>
-	<button ng-click="selectItem()">Add</button><br>
-	<label>Due Date
-		<input type="date" name="due_date" ng-model ="newBatch.due_date">
-	</label>
+	<button ng-click="selectPerPound()">Add</button><br>
+	
 	<hr>
 	<table>
 		<thead>
@@ -46,6 +38,16 @@
 			</tr>
 		</tbody>
 	</table>
+	<textarea ng-model="newBatch.instructions"></textarea>
+	<form ng-submit = "addBatch()">
+	<label>Customer
+		<select ng-model="newBatch._customer">
+			<option ng-repeat= "customer in customers" value ="{{customer._id}}">{{customer.name}}</option>
+		</select><br>
+	</label>
+	<label>Due Date
+		<input type="date" name="due_date" ng-model ="newBatch.due_date">
+	</label>
 	<input type="submit" name="submit" value="View Summary">
 	<!-- we want another button to appear for confirmation -->
 </form>
