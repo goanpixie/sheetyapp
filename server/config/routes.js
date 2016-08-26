@@ -10,5 +10,6 @@ module.exports = function(app){
 	app.post('/delete_item', linens.deleteItem);
 	app.get('/get_perpounds', linens.getPerPounds);
 	app.get('/get_peritems', linens.getPerItems);
+	app.post('/add_batch', linens.addBatch);
 }
 

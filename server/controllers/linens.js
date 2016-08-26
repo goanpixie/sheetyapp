@@ -139,5 +139,23 @@ function LinensController(){
 			}
 		});
 	}
+	this.addBatch = function(req, res){
+		console.log(req.body, "controllerrrrr")
+		var batch = new Batches(
+		{
+			status: req.body.status, 
+			instructions: req.body.instructions, 
+			due_date: req.body.due_date, 
+			_customer: req.body._customer,
+			order: req.body.order
+		});
+		batch.save(function(err){
+			if(err){
+				res.json(err);
+			}else{
+				res.send()
+			}
+		});
+	}
 }
 module.exports = new LinensController();
