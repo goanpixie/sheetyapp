@@ -8,5 +8,7 @@ module.exports = function(app){
 	app.get('/get_items', linens.getItems);
 	app.post('/edit_item/:id', linens.editItem);
 	app.post('/delete_item', linens.deleteItem);
+	app.get('/get_perpounds', linens.getPerPounds);
+	app.get('/get_peritems', linens.getPerItems);
 }
 
