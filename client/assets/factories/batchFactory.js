@@ -2,7 +2,6 @@ app.factory('batchFactory', ['$http', function($http){
 
 	function batchFactory(){
 		this.create = function(batch, callback){
-			console.log(batch, "factoryyyyyyyy")
 			$http.post('/add_batch', batch).then(function(results){
 				callback(results.data);
 			});
@@ -33,6 +32,11 @@ app.factory('batchFactory', ['$http', function($http){
 			$http.get('/get_peritems').then(function(results){
 				callback(results.data);
 			});
+		}
+		this.allBatches = function(callback){
+			$http.get('/get_batches').then(function(results){
+				callback(results.data);
+			})
 		}
 	}
 	return new batchFactory()	
