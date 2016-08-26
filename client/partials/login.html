@@ -1,4 +1,37 @@
-<form id="login_form">
-	<input type="text" name="login_name">
-	<input type="password" name="password">
-</form>
+<h1>Login</h1>
+	<form id="login_form">
+		<label>Username: <input type="text" name="login_name"></label><br>
+		<label>Password: <input type="password" name="password"></label><br>
+		<input type="submit" value="Login">
+	</form>
+</div>
+<style media="screen">
+	* {
+		font-family: Arial;
+	}
+	form {
+		margin-top: 4em;
+		text-align: left;
+	}
+	input[type=text],input[type=password]  {
+		width: 100%;
+		padding: 1em 1.67px;
+		margin: 0.4em 0;
+		box-sizing: border-box;
+		display: block;
+		border-radius: 5px;
+		font-size: 1.35em;
+	}
+	input[type=submit] {
+		width: 100%;
+		background-color: #3366ff;
+		color: white;
+		padding: 1.0px 1.0px;
+		margin: 8px 0;
+		border: none;
+		border-radius: 0.3em;
+		cursor: pointer;
+		height:7.97em;
+		font-size:1.0em;
+	}
+</style>
